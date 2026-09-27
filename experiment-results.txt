@@ -1,0 +1,126 @@
+Python 3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license()" for more information.
+
+
+========================================================================
+RRQR-KM experimental protocol (E1-E8) -- 9-dataset build (v10)
+selector     : GE Algorithm 5 inner loop, verified  [strategy=ge, f=auto]
+data folder  : C:\Users\hossein sadeghi\OneDrive\Desktop\New folder (15)\uci_data
+seed         : 20240601   restarts (randomized): 20
+run time     : 2026-09-27T14:31:56
+========================================================================
+[self-test:Kahan n=12] swaps=0, exit-omega=0.335 (f=2.45), log-vol -43.58 -> -43.58  OK
+[self-test:growth] SKIP: no swaps in any trial (vacuous — lower f further to probe).
+[data] data_banknote_authentication   N= 1372 d=  4 k= 2 labels=yes
+[data] glass                          N=  214 d=  9 k= 6 labels=yes
+[data] ionosphere                     N=  351 d= 34 k= 2 labels=yes
+[data] iris                           N=  150 d=  4 k= 3 labels=yes
+[data] seeds_dataset                  N=  210 d=  7 k= 3 labels=yes
+[data] wdbc                           N=  569 d= 30 k= 2 labels=yes
+[data] wholesale                      N=  440 d=  6 k= 3 labels=no 
+[data] wine                           N=  178 d= 13 k= 3 labels=yes
+[data] yeast                          N= 1484 d=  8 k=10 labels=yes
+[check] parsed dimensions vs UCI reference:
+        data_banknote_authentication   OK   expected (1372, 4, 2); got (1372, 4, 2)
+        glass                          OK   expected (214, 9, 6); got (214, 9, 6)
+        ionosphere                     OK   expected (351, 34, 2); got (351, 34, 2)
+        iris                           OK   expected (150, 4, 3); got (150, 4, 3)
+        seeds_dataset                  OK   expected (210, 7, 3); got (210, 7, 3)
+        wdbc                           OK   expected (569, 30, 2); got (569, 30, 2)
+        wholesale                      OK   expected (440, 6, 3); got (440, 6, 3)
+        wine                           OK   expected (178, 13, 3); got (178, 13, 3)
+        yeast                          OK   expected (1484, 8, 10); got (1484, 8, 10)
+[E1-E3] data_banknote_authentication: N=1372 d=4 k=2
+[E1-E3] glass: N=214 d=9 k=6
+[E1-E3] ionosphere: N=351 d=34 k=2
+[E1-E3] iris: N=150 d=4 k=3
+[E1-E3] seeds_dataset: N=210 d=7 k=3
+[E1-E3] wdbc: N=569 d=30 k=2
+[E1-E3] wholesale: N=440 d=6 k=3
+[E1-E3] wine: N=178 d=13 k=3
+[E1-E3] yeast: N=1484 d=8 k=10
+
+========================================================================
+E1-E3 SUMMARY  (J = partition cost in FULL standardized space)
+========================================================================
+
+
+========================================================================
+ANALYTIC SUMMARY (mean rank by J_mean across datasets)
+========================================================================
+  var-part               mean rank  1.78
+  greedy K-means++       mean rank  4.67
+  PCA-part               mean rank  5.67
+  maxvol (PC)            mean rank  6.11
+  RRQR-Init              mean rank  6.33
+  RRQR-KM (ours)         mean rank  6.33
+  plain pivoted QR       mean rank  6.33
+  farthest-first         mean rank  7.00
+  K-means++              mean rank  7.67
+  Random                 mean rank  8.00
+  Bradley-Fayyad         mean rank  8.11
+  RRQR-FS + K-m++        mean rank 10.00
+
+RRQR-KM (ours) vs each baseline (J_mean, per dataset):
+  vs Random                  win 6 / loss 3 / tie 0  (n=9)
+  vs K-means++               win 5 / loss 4 / tie 0  (n=9)
+  vs greedy K-means++        win 3 / loss 6 / tie 0  (n=9)
+  vs farthest-first          win 3 / loss 2 / tie 4  (n=9)
+  vs PCA-part                win 4 / loss 4 / tie 1  (n=9)
+  vs var-part                win 0 / loss 7 / tie 2  (n=9)
+  vs Bradley-Fayyad          win 5 / loss 4 / tie 0  (n=9)
+  vs plain pivoted QR        win 0 / loss 0 / tie 9  (n=9)
+  vs maxvol (PC)             win 1 / loss 1 / tie 7  (n=9)
+  vs RRQR-Init               win 0 / loss 0 / tie 9  (n=9)
+  vs RRQR-FS + K-m++         win 8 / loss 1 / tie 0  (n=9)
+
+[E5] centering ablation:
+        data_banknote_authentication   ON=same     OFF=changed
+        glass                          ON=same     OFF=changed
+        ionosphere                     ON=same     OFF=changed
+        iris                           ON=same     OFF=changed
+        seeds_dataset                  ON=same     OFF=changed
+        wdbc                           ON=same     OFF=changed
+        wholesale                      ON=same     OFF=changed
+        wine                           ON=same     OFF=changed
+        yeast                          ON=same     OFF=changed
+[E6] data_banknote_authentication: realized= 1  worst(f=4.69)= 1.76e+03
+[E6] glass: realized= 1  worst(f=4.69)= 1e+07
+[E6] ionosphere: realized= 1  worst(f=4.69)= 1.76e+03
+[E6] iris: realized= 1  worst(f=4.69)= 1.26e+05
+[E6] seeds_dataset: realized= 1  worst(f=4.69)= 1.26e+05
+[E6] wdbc: realized= 1  worst(f=4.69)= 1.76e+03
+[E6] wholesale: realized= 1  worst(f=4.69)= 1.26e+05
+[E6] wine: realized= 1  worst(f=4.69)= 1.26e+05
+[E6] yeast: realized= 1  worst(f=4.69)= 1e+07
+[E7] GE-criterion interchanges (terminated runs): 0; budget-exhausted datasets: 0/9; criterion CERTIFIED at exit: 9/9
+[E8] data_banknote_authentication: T1 vol-ratio  147 vs q1^k  7.52e+06 (OK); T2 dmin  3.95 >= sigma_k/q1  0.0116 (OK); T3 first  3.12 (OK)
+[E8] glass: T1 vol-ratio  323 vs q1^k  1.52e+17 (OK); T2 dmin  6.51 >= sigma_k/q1  0.0141 (OK); T3 first  10.1 (OK)
+[E8] ionosphere: T1 vol-ratio  16.8 vs q1^k  4.9e+05 (OK); T2 dmin  16.7 >= sigma_k/q1  0.0551 (OK); T3 first  11.5 (OK)
+[E8] iris: T1 vol-ratio  75.2 vs q1^k  4.81e+07 (OK); T2 dmin  2.35 >= sigma_k/q1  0.0128 (OK); T3 first  3.29 (OK)
+[E8] seeds_dataset: T1 vol-ratio  128 vs q1^k  1.33e+08 (OK); T2 dmin  2.96 >= sigma_k/q1  0.022 (OK); T3 first  3.35 (OK)
+[E8] wdbc: T1 vol-ratio  12.1 vs q1^k  1.29e+06 (OK); T2 dmin  25.9 >= sigma_k/q1  0.0488 (OK); T3 first  20.2 (OK)
+[E8] wholesale: T1 vol-ratio  6.73 vs q1^k  1.24e+09 (OK); T2 dmin  15.5 >= sigma_k/q1  0.0166 (OK); T3 first  18.7 (OK)
+[E8] wine: T1 vol-ratio  57.8 vs q1^k  8.08e+07 (OK); T2 dmin  6.78 >= sigma_k/q1  0.0366 (OK); T3 first  5.67 (OK)
+[E8] yeast: T1 vol-ratio  7.38e+05 vs q1^k  1.51e+30 (OK); T2 dmin  7.3 >= sigma_k/q1  0.00415 (OK); T3 first  11.2 (OK)
+[E8] theorem checks passed: 9/9 datasets (all three tests, both stages' constants).
+[E4] outliers-1pct
+[E4] outliers-5pct
+[E4] outliers-10pct
+[E4] imbalance-1-10-100
+[E4] var-imbalance
+[E4] rankdef-25d
+[E4] k-gt-d
+[E4e] separation=0.75: random=0.04, kmpp=0.04, ff=0.04, qr=0.04, maxvol=0.04, rrqr-km=0.04
+[E4e] separation=1.0: random=0.07, kmpp=0.08, ff=0.07, qr=0.07, maxvol=0.06, rrqr-km=0.07
+[E4e] separation=1.5: random=0.17, kmpp=0.18, ff=0.22, qr=0.18, maxvol=0.19, rrqr-km=0.18
+[E4e] separation=2.0: random=0.56, kmpp=0.61, ff=0.49, qr=0.63, maxvol=0.61, rrqr-km=0.63
+[E4e] separation=3.0: random=0.69, kmpp=0.73, ff=0.75, qr=0.55, maxvol=0.75, rrqr-km=0.55
+[E4e] separation=4.0: random=0.77, kmpp=0.82, ff=0.85, qr=0.85, maxvol=0.85, rrqr-km=0.85
+
+========================================================================
+DONE. Outputs in 'results/':
+  summary.csv  raw_results.json  report.tex  tables/*.tex
+  E8 adds table_theorem.tex: the paper's Theorems 5.10/5.13
+  verified numerically on every dataset.
+========================================================================
