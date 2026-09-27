@@ -8,14 +8,16 @@ and a deterministic K-means initialization.
 Author: Hossein Sadeghi (hsadeghi@iasbs.ac.ir)
 ORCID: https://orcid.org/0000-0003-1903-1627
 
-
+https://doi.org/10.5281/zenodo.22996265
 GitHub: https:github.com/hsadeghi123/rrqr-km
 
 ## Contents
-
+   'rrqr_km.py'- the core algorithm 
+ 
 - 'run_experiments.py' — UCI benchmarks and tables
 
    'exp_kahan_f.py` — UCI benchmarks and tables
+
     kahan_f_results
     summary
     tables 
